@@ -28,7 +28,7 @@ mod_devolutiva_server <- function(id, r){
       )
 
       indiceH_sujeito <- -log(c(1-mean(r$cooperou),mean(r$cooperou)), 2)
-      indiceH_bot <- -log(c(1-mean(r$probability),mean(r$probability)), 2)
+      indiceH_bot <- -log(c(1-mean(as.numeric(db_instrument$probability)),mean(as.numeric(db_instrument$probability))), 2)
 
       # Calcular informação mútua
       table_informacao_mutua <- matrix(
@@ -53,11 +53,19 @@ mod_devolutiva_server <- function(id, r){
 
       teste <- data.frame(table_informacao_condicional)
 
-      browser()
+      tagList(
+        tags$h3('Quanto você está disposto a cooperar quando o outro coopera?'),
+        tags$p(round(teste[2,2], 2), style = 'text-align: center;'),
+        tags$h3('Quanto você está disposto a cooperar quando o outro NÃO coopera?'),
+        tags$p(round(teste[2,1], 2), style = 'text-align: center;'),
+        tags$h3('Quanto você está disposto a NÃO cooperar quando o outro coopera?'),
+        tags$p(round(teste[1,2], 2), style = 'text-align: center;'),
+        tags$h3('Quanto você está disposto a NÃO cooperar quando o outro NÃO coopera?'),
+        tags$p(round(teste[1,1], 2), style = 'text-align: center;'),
+        tags$h3('Quantas vezes você cooperou?'),
+        tags$p(paste0(round(sum(r$cooperou)*100/nrow(db_instrument)), '% das vezes'), style = 'text-align: center;')
+      )
 
-
-
-      p(glue::glue('Você cooperou {sum(r$bot_cooperou)} vezes'))
     })
 
   })

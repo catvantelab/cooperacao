@@ -24,7 +24,8 @@ mod_teste_server <- function(id, r){
 
     output$ui <- renderUI({
       tagList(
-        p(db_instrument$enunciado[1]),
+
+        p(db_instrument$enunciado[1], class = 'item'),
         fluidRow(
           column(
             6,
@@ -81,9 +82,10 @@ mod_teste_server <- function(id, r){
         if(r$item == nrow(db_instrument)){
           output$ui <- renderUI(mod_devolutiva_ui("devolutiva_1"))
         } else {
+          r$probability <- db_instrument$probability[length(r$bot_cooperou)]
           output$ui <- renderUI({
             tagList(
-              p(db_instrument$enunciado[r$item + 1]),
+              p(db_instrument$enunciado[r$item + 1], class = 'item'),
               fluidRow(
                 column(
                   6,
@@ -143,9 +145,10 @@ mod_teste_server <- function(id, r){
         if(r$item == nrow(db_instrument)){
           output$ui <- renderUI(mod_devolutiva_ui("devolutiva_1"))
         } else {
+          r$probability <- db_instrument$probability[length(r$bot_cooperou)]
           output$ui <- renderUI({
             tagList(
-              p(db_instrument$enunciado[r$item + 1]),
+              p(db_instrument$enunciado[r$item + 1], class = 'item'),
               fluidRow(
                 column(
                   6,

@@ -9,7 +9,7 @@ app_server <- function(input, output, session) {
 
 
   r <- reactiveValues()
-  r$probability <- .5
+  r$probability <- db_instrument$probability[1]
   r$chance <- c()
   r$bot_cooperou <- c()
   r$item <- 0

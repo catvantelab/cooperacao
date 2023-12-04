@@ -1,0 +1,100 @@
+
+.shiny-input-radiogroup, .shiny-input-container{
+  margin: 10px auto;
+}
+
+div#tipa {
+    display: flex;
+    align-items: center;
+}
+
+/* Alinha os textos dos itens para ficarem centralizados */
+.item {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Centraliza os botões */
+.btn {
+  text-align: center;
+}
+
+
+/* Configurações dos botões de clique */
+.action-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 200px;;
+  color: white;
+  border: none;
+  background-color: #1EA097;
+  text-align: center;
+  height: 50px;
+  transition-duration: 0.4s;
+}
+
+.action-button:hover {
+  color: white;
+  background-color: #0F6E87;
+}
+
+/* Configurações da imagem */
+#catvante {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Centralzia todos os headings */
+h1, h2, h3 {
+  text-align: center;
+}
+
+/* Remove as barras de header do  */
+.main-header, .logo {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Coloca a cor da fonte em preto para todos os boxes */
+.box p {
+  color: black
+}
+
+/* Coloca um radiano no app */
+.content-wrapper {
+    border-radius: 15px 15px 0 0;
+    background-color: #FFFFFF;
+}
+
+/* Configuração de texto*/
+
+body {
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+
+}
+
+p, strong, li, label {
+  font-size: 16px;
+}
+
+
+
+.radioGroupButtons {
+  margin-top: 15px;
+}
+
+.skin-blue .left-side, .skin-blue .main-sidebar, .skin-blue .wrapper {
+    background-color: #0f6e87;
+}
+
+
+.box.box-solid {
+    border-top: 0;
+    box-shadow: 1px 1px 8px 0px black;
+}
